@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="card" style="margin: 30px 10px">
+    <div class="d-flex justify-content-between">
+      <div style="margin: 30px 10px">
+        <table class="table">
+          <tbody *ngIf="ComandeClient">
+          <tr>
+            <th scope="row">Code Commande:</th>
+            <td>{{ComandeClient.code}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Date Commande:</th>
+            <td>{{ComandeClient.dateCommande}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Client:</th>
+            <td>{{ComandeClient.mail}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Montant Commande:</th>
+            <td>{{ComandeClient.prixUnitaire}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Etat de Commande:</th>
+            <td>{{ComandeClient.etatCommande}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin: 30px 10px">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Code ligne Commande</th>
+            <th scope="col">Article</th>
+            <th scope="col">Quantite</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Supprimer</th>
+            <th scope="col">Modifier</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let ligne of lignCmnd,let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{ligne.id}}</td>
+            <td>{{ligne.codeArticle}}</td>
+            <td>{{ligne.quantite}}</td>
+            <td>{{ligne.prixUnitaire}}</td>
+            <td><button  class="btn btn-danger">Supprimer</button></td>
+            <td><button class="btn btn-success">Modifier</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg" style="background-color: white;height: 70px ;margin-left: 10px;border-radius: 10px">
+  <div class="container-fluid">
+    <h1 style="margin-left: 40px;margin-right: 80px">SGS</h1>
+    <div class="d-flex">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-right: 460px">      </div>
+      <div class="d-flex">
+        <div style="margin-right: 5px" *ngIf="user"><p>{{user.nom}} {{user.prenom}}</p></div>
+        <div><img src="assets/aymen.jpg"></div>
+      </div>
+      <div style="margin-left: 50px;min-width: 100px">
+        <button class="btn" (click)="logout()" style="background-color: #f44336;"[routerLink]="['']">Log out</button>
+      </div>
+    </div>
+  </div>
+</nav>

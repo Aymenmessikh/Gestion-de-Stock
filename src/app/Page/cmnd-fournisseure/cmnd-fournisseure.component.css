@@ -1,0 +1,28 @@
+.info{
+  margin: 20px 10px;
+  color: white;
+}
+.Cmndclient{
+  background-color: white;
+  border-radius: 10px;
+  width: 400px;
+  height: 260px;
+  max-width: 400px;
+  margin-bottom: 40px;
+}
+button{
+  margin: 5px;
+}
+.grid{
+  display: grid;
+  grid-row: auto;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+table{
+  max-width: 420px;
+}
+.flex{
+  background-color: #2196f3ab;
+  height: 100px;
+}

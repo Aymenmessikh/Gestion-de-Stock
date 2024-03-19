@@ -1,0 +1,84 @@
+<div class="addClient">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6 -flex justify-content-centerd" style="margin-top: 40px">
+        <div class="card">
+          <div class="card-header" style="background-color: #dddddd;height: 150px">
+            <h1 class="d-flex justify-content-center p-4" style="color: white">Ajouter Nouveux Fournisseure</h1>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="fourForm" (submit)="ajouterFournisseure()">
+              <div class="d-flex">
+                <div style="margin: 20px">
+                  <div>
+                    <label for="Nom" class="form-label">Nom</label>
+                    <input type="text" [formControlName]="'Nom'"  class="form-control" id="Nom">
+                  </div>
+                  <div *ngIf="fourForm.get('Nom').hasError('required') && fourForm.get('Nom').touched" class="alert alert-danger">
+                    Nom is required
+                  </div>
+                  <div>
+                    <label for="prenom" class="form-label">Prenom</label>
+                    <input type="text" class="form-control"  [formControlName]="'prenom'" id="prenom">
+                  </div>
+                  <div *ngIf="fourForm.get('prenom').hasError('required') && fourForm.get('prenom').touched" class="alert alert-danger">
+                    Prenom is required
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" [formControlName]="'email'" id="email" aria-describedby="emailHelp">
+                  </div>
+                  <div *ngIf="fourForm.get('email').hasError('required') && fourForm.get('email').touched" class="alert alert-danger">
+                    Email is required
+                  </div>
+                  <div>
+                    <label for="nemTel" class="form-label">Nemero Telephone</label>
+                    <input type="text" class="form-control" [formControlName]="'nemTel'" id="nemTel">
+                  </div>
+                  <div *ngIf="fourForm.get('nemTel').hasError('required') && fourForm.get('nemTel').touched" class="alert alert-danger">
+                    nemuro Telephone is required
+                  </div>
+                </div>
+                <div style="margin: 20px">
+                  <div>
+                    <label for="Address" class="form-label">Adress</label>
+                    <input type="text" class="form-control" [formControlName]="'address'" id="Address">
+                  </div>
+                  <div *ngIf="fourForm.get('address').hasError('required') && fourForm.get('address').touched" class="alert alert-danger">
+                    Address is required
+                  </div>
+                  <div>
+                    <label for="Ville" class="form-label">Ville</label>
+                    <input type="text" class="form-control" [formControlName]="'ville'" id="Ville">
+                  </div>
+                  <div *ngIf="fourForm.get('ville').hasError('required') && fourForm.get('ville').touched" class="alert alert-danger">
+                    Ville is required
+                  </div>
+                  <div>
+                    <label for="Pays" class="form-label">Pays</label>
+                    <input type="text" class="form-control" [formControlName]="'pays'" id="Pays">
+                  </div>
+                  <div *ngIf="fourForm.get('pays').hasError('required') && fourForm.get('pays').touched" class="alert alert-danger">
+                    Pays is required
+                  </div>
+                  <div>
+                    <label for="codePostal" class="form-label">Code Postal</label>
+                    <input type="text" class="form-control" [formControlName]="'codePostal'" id="codePostal">
+                  </div>
+                  <div *ngIf="fourForm.get('codePostal').hasError('required') && fourForm.get('codePostal').touched" class="alert alert-danger">
+                    Code Postal is required
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between">
+                <button class="btn" style="background-color: white;color: #f44336;margin-top: 10px"><a [routerLink]="['/dash/listFournisseure']" style="color:#f44336;margin-top: 10px">Annuler</a></button>
+                <button type="submit" class="btn" [disabled]="fourForm.invalid" style="background-color: #f44336;margin-top: 10px;color: white">Ajouter</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

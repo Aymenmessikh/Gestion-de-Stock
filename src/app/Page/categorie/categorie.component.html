@@ -1,0 +1,43 @@
+<div class="d-flex justify-content-around" style="background-color: white;margin:10px;border-radius: 10px ">
+  <div>
+    <h1>List des Categorie</h1>
+  </div>
+  <div>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" style="border: solid black 2px;margin-top: 5px" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn" type="submit" style="background-color: #f44336">Search</button>
+    </form>
+  </div>
+  <div>
+    <button class="btn btn-primary" [routerLink]="['/dash/nvCategorie']">Ajouter Categorie</button>
+  </div>
+</div>
+<div style="margin-top: 10px;margin-left:10px;">
+  <div class="container">
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Code Categorie</th>
+          <th scope="col">Designation</th>
+          <th scope="col">Supprimer</th>
+          <th scope="col">Modifier</th>
+          <th scope="col">List des Article</th>
+        </tr>
+        </thead>
+        <tbody *ngFor="let categorie of categories,let i=index">
+        <tr>
+          <th scope="row">{{i+1}}</th>
+          <td>{{categorie.codeCategorie}}</td>
+          <td>{{categorie.designation}}</td>
+          <td><button class="btn btn-danger" (click)="supprimerCategorie(categorie.id)">Supprimer</button></td>
+          <td><button class="btn btn-success">Modifier</button></td>
+          <td><button (click)="sendId(categorie.id)" class="btn btn-primary">Afficher</button></td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center"><app-pagination></app-pagination></div>
+</div>

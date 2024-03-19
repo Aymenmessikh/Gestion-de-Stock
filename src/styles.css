@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+a{
+  text-decoration: none;
+}
+body{
+  background-color:#f1f5f9;
+}
+*{
+  box-sizing: border-box;
+}
+*:focus{
+  outline: none;
+}

@@ -1,0 +1,103 @@
+<div class="container">
+  <div style="margin: 20px 80px">
+    <div class="card-header" style="background-color: #f44336;height: 80px;">
+      <h3 style="color: white;text-align: center;padding-top: 20px">Nouveux Commande Fournisseurs</h3>
+    </div>
+    <div class="d-flex justify-content-between" style="background-color: white">
+      <div class="col-4 m-2" style="padding-left: 20px">
+        <form>
+          <div class="mb-3">
+            <label for="codeCmnd" class="form-label">Code de la Commande</label>
+            <input type="text" class="form-control" id="codeCmnd">
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Date</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+          <div class="mb-3 form-check">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Clients</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div>
+        <div class="info">
+          <p>Name: <span>Aymen Messikh</span></p>
+          <p>Nemero Telephone: <span>0674099519</span></p>
+          <p>Address: <span>Collo</span></p>
+          <p>Pays: <span>Algerie</span></p>
+        </div>
+      </div>
+      <div>
+        <img src="assets/aymen.jpg">
+      </div>
+    </div>
+    <div class="d-flex justify-content-between" style="background-color: white;padding: 10px 20px">
+      <div class="mb-3">
+        <label for="CodeArticle" class="form-label">Code Article</label>
+        <input type="text" class="form-control" id="CodeArticle">
+      </div>
+      <div class="mb-3">
+        <label for="quantite" class="form-label">Quantite</label>
+        <input type="number" class="form-control" id="quantite">
+      </div>
+      <div class="mb-3">
+        <label for="prix" class="form-label">Prix</label>
+        <input type="number" class="form-control" id="prix">
+      </div>
+      <div>
+        <button class="btn btn-success m-4">Ajouter</button>
+      </div>
+    </div>
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Code Article</th>
+          <th scope="col">Designation</th>
+          <th scope="col">quantie</th>
+          <th scope="col">prix</th>
+          <th scope="col">mantant</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>Otto</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Jacob</td>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry the Bird</td>
+          <td>Larry the Bird</td>
+          <td>Larry the Bird</td>
+          <td>Larry the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="2" style="padding-left: 140px"><span class="span">Totale de Commande</span></td>
+          <td colspan="4"  style="padding-left: 140px"><span class="span">85545489</span></td>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

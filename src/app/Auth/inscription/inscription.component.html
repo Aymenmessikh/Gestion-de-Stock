@@ -1,0 +1,87 @@
+<div class="inscription">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="margin-top:70px">
+        <div class="card">
+          <div class="card-header" style="background-color: #f44336;height: 100px">
+            <h1 class="d-flex justify-content-center p-4" style="color: white">Inscription</h1>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="registreForm" (submit)="registre()">
+                <div>
+                  <div>
+                    <label for="Nom" class="form-label">Nom <span>*</span></label>
+                    <input type="text" class="form-control" [formControlName]="'nom'" name="nom" id="Nom">
+                  </div>
+                  <div *ngIf="registreForm.get('nom').hasError('required') && registreForm.get('nom').touched" style="color: red">
+                    Nom is required
+                  </div>
+                  <div>
+                    <label for="Prenom" class="form-label">Prenom <span>*</span></label>
+                    <input type="text" class="form-control" [formControlName]="'prenom'" name="prenom" id="Prenom" aria-describedby="emailHelp">
+                  </div>
+                  <div *ngIf="registreForm.get('prenom').hasError('required') && registreForm.get('prenom').touched" style="color: red">
+                    Prenom is required
+                  </div>
+                  <div>
+                    <label class="form-label">Role <span>*</span></label>
+                    <select [formControlName]="'role'" class="form-select" aria-label="Default select example">
+                      <option value="USER">User</option>
+                      <option value="ADMIN">Admin</option>
+                    </select>
+                  </div>
+                  <div *ngIf="registreForm.get('role').hasError('required') && registreForm.get('role').touched" style="color: red">
+                  Role is required
+                  </div>
+                  <div>
+                    <label for="Email" class="form-label">Email address <span>*</span></label>
+                    <input type="email" class="form-control" [formControlName]="'email'" name="email" id="Email" aria-describedby="emailHelp">
+                  </div>
+                  <div *ngIf="registreForm.get('email').hasError('required') && registreForm.get('email').touched" style="color: red">
+                    Email is required
+                  </div>
+                  <div class="alert alert-danger"  *ngIf="registreForm.get('email').hasError('email') && registreForm.get('email').touched">
+                    Invalid email format
+                  </div>
+                  <div>
+                    <label for="Password" class="form-label">Password <span>*</span></label>
+                    <input type="password" class="form-control" [formControlName]="'password'" name="password" id="Password" minlength="8">
+                  </div>
+                  <div *ngIf="registreForm.get('password').hasError('required') && registreForm.get('password').touched" style="color: red">
+                    Password is required
+                  </div>
+                  <div *ngIf="registreForm.get('password').hasError('minlength') && registreForm.get('password').touched" style="color: red" >
+                    Password must be at least 8 characters
+                  </div>
+                  <div>
+                    <label for="ConfirmePassword" class="form-label">Confirme Password <span>*</span></label>
+                    <input type="password" class="form-control" [formControlName]="'passwordC'" id="ConfirmePassword" minlength="8">
+                  </div>
+                  <div *ngIf="registreForm.get('passwordC').hasError('required') && registreForm.get('passwordC').touched" style="color: red">
+                    Confirme Password is required
+                  </div>
+                  <div *ngIf="registreForm.get('passwordC').hasError('minlength') && registreForm.get('passwordC').touched" style="color: red">
+                    Confirme Password must be at least 8 characters
+                  </div>
+                </div>
+              <div class="d-flex justify-content-between">
+                <button class="btn" style="background-color: white;color: #f44336;margin-top: 10px"><a [routerLink]="['']" style="color:#f44336;margin-top: 10px">Se Connecter</a></button>
+                <button type="submit" [disabled]="registreForm.invalid" class="btn" style="background-color: #f44336;margin-top: 10px">S'incrire</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div style="margin-top: 50%">
+          <div>
+            <button type="button" style="border-radius: 50%; border: none; margin-left: 30px" (click)="fileInput.click()">
+              <img style="width: 150px; height: 150px; border-radius: 50%" src="{{image}}">
+              <input hidden="" [formControlName]="'image'" type="file" name="image" #fileInput>
+            </button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

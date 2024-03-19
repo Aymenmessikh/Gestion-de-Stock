@@ -1,0 +1,95 @@
+<div  class="menu" style="display: flex;">
+  <div class="sidbar">
+    <div>
+      <h3 class="sgs"><span class="span">S</span>ystème de <span class="span">G</span>estion de <span class="span">S</span>tock</h3>
+    </div>
+    <hr>
+    <div class="accordion" id="accordion">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-lg-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDashboard" aria-expanded="true" aria-controls="collapseDashboard">
+              DASHBOARD
+            </button>
+          </h2>
+        </div>
+        <div id="collapseDashboard" class="collapse show" data-bs-parent="#accordion">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li><a href [routerLink]="['/dash/Statistique']"><span>STATISTIQUE</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-lg-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseA" aria-expanded="false" aria-controls="collapseA">
+              ARTICLE
+            </button>
+          </h2>
+        </div>
+        <div id="collapseA" class="collapse" data-bs-parent="#accordion">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li><a href [routerLink]="['/dash/listArticle']"><span>LIST DES ARTICLES</span></a></li>
+            <li><a href [routerLink]="['/dash/nvArticle']"><span>AJOUTER ARTICLE</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-lg-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseC" aria-expanded="false" aria-controls="collapseC">
+              CLIENTS
+            </button>
+          </h2>
+        </div>
+        <div id="collapseC" class="collapse" data-bs-parent="#accordion">
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li><a href [routerLink]="['/dash/listClient']"><span>LIST DES CLIENTS</span></a></li>
+              <li><a href [routerLink]="['/dash/cmndClient']"><span>COMMANDE CLIENTS</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-lg-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseF" aria-expanded="false" aria-controls="collapseF">
+              FOURNISSEURE
+            </button>
+          </h2>
+        </div>
+        <div id="collapseF" class="collapse" data-bs-parent="#accordion">
+          <div class="card ul">
+            <ul class="list-group list-group-flush">
+              <li><a href [routerLink]="['/dash/listFournisseure']"><span>LIST DES FOURNISSEURE</span></a></li>
+              <li><a href [routerLink]="['/dash/CmndFournisseure']"><span>COMMANDE FOURNISSEURE</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-lg-start" [routerLink]="['/dash/categorie']" type="button" data-bs-toggle="collapse" data-bs-target="#collapseP" aria-expanded="false" aria-controls="collapseP">
+              CATEGORIE
+            </button>
+          </h2>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h2 class="mb-0">
+            <button class="btn btn-link btn-block text-lg-start" [routerLink]="['/dash/profile']" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCA" aria-expanded="false" aria-controls="collapseCA">
+              PROFILE
+            </button>
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

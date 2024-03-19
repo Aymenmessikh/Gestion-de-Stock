@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-around" style="background-color: white;margin:10px;border-radius: 10px ">
+  <div>
+    <h1>List des Articles By Categorie</h1>
+  </div>
+  <div>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" style="border: solid black 2px;margin-top: 5px" type="search" placeholder="Search" aria-label="Search"
+             name="key" id="searchName" class="form-control mr-sm-2"  required>
+      <button class="btn" type="submit" style="background-color: #f44336">Search</button>
+    </form>
+  </div>
+  <div>
+    <button class="btn btn-primary" [routerLink]="['/dash/nvArticle']">Ajouter Article</button>
+  </div>
+</div>
+<div style="margin-top: 10px;margin-left:10px;">
+  <div class="container">
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom Article</th>
+          <th scope="col">Code Article</th>
+          <th scope="col">Categorie</th>
+          <th scope="col">Prix d'Article</th>
+          <th scope="col" style="width: 50px">Supprimer</th>
+          <th scope="col" style="width: 50px">Modifier</th>
+          <th scope="col" style="width: 50px">Dettaile</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let articles of article ,let i=index ">
+          <th scope="row">{{i+1}}</th>
+          <td>{{articles.designation}}</td>
+          <td>{{articles.codeArticle | uppercase}}</td>
+          <td>{{articles.codeCategorie | uppercase}}</td>
+          <td>{{articles.prixUnitairHt | currency}}</td>
+          <td><button  (click)="suprimmer(articles.id)" class="btn btn-danger">Supprimer</button></td>
+          <td><button class="btn btn-success">Modifier</button></td>
+          <td><button class="btn btn-primary">Dettaile</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

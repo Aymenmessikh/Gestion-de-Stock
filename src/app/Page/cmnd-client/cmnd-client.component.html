@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-around" style="background-color: white;margin:10px;border-radius: 10px ">
+  <div>
+    <h1>List des Commande Clients</h1>
+  </div>
+  <div>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" style="border: solid black 2px;margin-top: 5px" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn" type="submit" style="background-color: #f44336">Search</button>
+    </form>
+  </div>
+  <div>
+    <button class="btn btn-primary" [routerLink]="['/dash/nvCmndClient']">Nouveux Commande</button>
+  </div>
+</div>
+<div style="margin-top: 10px;margin-left:10px;">
+  <div class="container">
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Code Commande</th>
+          <th scope="col">Date Commande</th>
+          <th scope="col">Etat Commande</th>
+          <th scope="col">Montant de Commande</th>
+          <th scope="col" style="width: 50px">Supprimer</th>
+          <th scope="col" style="width: 50px">Modifier</th>
+          <th scope="col" style="width: 50px">Dettaile</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let cmnd of cmndClients| paginate : { itemsPerPage: 9, currentPage: page, totalItems: totalLength },let i=index ">
+          <th scope="row">{{i+1}}</th>
+          <td>{{cmnd.code}}</td>
+          <td>{{cmnd.dateCommande | date:'fullDate'}}</td>
+          <td>{{cmnd.etatCommande}}</td>
+          <td>{{cmnd.prixUnitaire}}</td>
+          <td><button  (click)="suprimmerCmnd(cmnd.id)" class="btn btn-danger">Supprimer</button></td>
+          <td><button class="btn btn-success">Modifier</button></td>
+          <td><button class="btn btn-primary" (click)="sendId(cmnd.id)">Dettaile</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pagination"><pagination-controls (pageChange)="page=$event"></pagination-controls></div>
+</div>

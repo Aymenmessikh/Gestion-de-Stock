@@ -1,0 +1,21 @@
+ <div style="text-align:center;margin: 50px;display: flex;justify-content: space-between" *ngIf="!loading">
+    <div style="margin-top: 50px">
+      <apx-chart
+        [series]="serie"
+        [chart]="Details"
+        [labels]="label"
+        [title]="titel"
+      ></apx-chart>
+    </div>
+    <div>
+      <apx-chart
+        [series]="data"
+        [chart]="info"
+        [title]="title"
+        [labels]="label"
+        [colors]="colors"
+        [xaxis]="xaxis"
+      >
+      </apx-chart>
+    </div>
+  </div>

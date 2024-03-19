@@ -1,0 +1,26 @@
+.info{
+  margin: 20px 20px;
+}
+img{
+  height: 150px;
+  width: 130px;
+  margin:20px 10px;
+}
+.span {
+  color: #f44336;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd; /* Add a border to the entire table */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Add borders to table cells */
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2; /* Add background color to header cells */
+}

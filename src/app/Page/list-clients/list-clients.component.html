@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-around" style="background-color: white;margin:10px;border-radius: 10px ">
+  <div>
+    <h1>List des Clients</h1>
+  </div>
+  <div>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" style="border: solid black 2px;margin-top: 5px" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn" type="submit" style="background-color: #f44336">Search</button>
+    </form>
+  </div>
+  <div>
+    <button class="btn btn-primary" [routerLink]="['/dash/nvClient']">Ajouter Client</button>
+  </div>
+</div>
+<div style="margin-top: 10px;margin-left:10px;">
+  <div class="container">
+    <div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Mail</th>
+          <th scope="col">Numero Telephone</th>
+          <th scope="col">Address</th>
+          <th scope="col">Ville</th>
+          <th scope="col">Pays</th>
+          <th scope="col">Photo</th>
+          <th scope="col" style="width: 50px">Supprimer</th>
+          <th scope="col" style="width: 50px">Modifier</th>
+          <th scope="col" style="width: 50px">Dettaile</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let client of clients | paginate: { itemsPerPage: 8, currentPage: page, totalItems: totalLength },let i=index ">
+          <th scope="row">{{i+1}}</th>
+          <td>{{client.nome | uppercase}}</td>
+          <td>{{client.mail}}</td>
+          <td>{{client.adresse.adresse | uppercase}}</td>
+          <td>{{client.adresse.ville | uppercase}}</td>
+          <td>{{client.adresse.paye | uppercase}}</td>
+          <td>{{client.adresse.codePostal}}</td>
+          <td><img src="{{client.photoData}}"  loading="lazy"></td>
+          <td><button  (click)="suprimmer(client.id)" class="btn btn-danger">Supprimer</button></td>
+          <td><button class="btn btn-success">Modifier</button></td>
+          <td><button class="btn btn-primary">Dettaile</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pagination"><pagination-controls (pageChange)="page=$event"></pagination-controls></div>
+</div>
+

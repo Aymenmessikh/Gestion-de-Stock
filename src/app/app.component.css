@@ -1,0 +1,6 @@
+app-menu{
+  position: fixed;
+}
+router-outlet{
+  background-color: #f1f5f9;
+}

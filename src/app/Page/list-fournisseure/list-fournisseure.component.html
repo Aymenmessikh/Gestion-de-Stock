@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-around" style="background-color: white;margin:10px;border-radius: 10px ">
+  <div>
+    <h1>List des Fournisseures</h1>
+  </div>
+  <div>
+    <button class="btn btn-primary" [routerLink]="['/dash/nvFournisseure']">Nouveux Fournisseure</button>
+  </div>
+</div>
+<div style="margin-top: 10px;margin-left:10px;">
+  <div class="container">
+    <div class="grid">
+      <div *ngFor="let four of fours">
+        <div class="client" >
+          <div class="d-flex">
+            <div><img src="assets/aymen.jpg"  loading="lazy"></div>
+            <div class="info">
+              <p>Name: <span>{{four.nome}}</span></p>
+              <p>Nemuro Telephone: <span>{{four.nemTel}}</span></p>
+              <address>Address: <span>{{four.adresse.paye}},{{four.adresse.ville}},{{four.adresse.adresse}},{{four.adresse.codePostal}}</span></address>
+              <p>Email: <span>{{four.mail}}</span></p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-primary">Modifier</button>
+            <button class="btn btn-danger" (click)="suprimmer(four.id)">Supprime</button>
+            <button class="btn btn-success">Dettaile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center"><app-pagination></app-pagination></div>
+</div>

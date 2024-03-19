@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="card" style="margin: 30px">
+    <div class="d-flex justify-content-around">
+      <div style="margin: 30px">
+        <img src="assets/aymen.jpg">
+        <div>
+          <h3 style="margin-left:40px ">Aymen Messikh</h3>
+        </div>
+        <div class="d-flex justify-content-around" style="margin-top: 20px">
+          <button class="btn"  [routerLink]="['/dash/modifierProfile']" style="background-color: #f44336">Modifier</button>
+          <button class="btn" [routerLink]="['/dash/change']" style="background-color: #f44336">Changer Mote Passe</button>
+        </div>
+      </div>
+      <div  style="margin: 120px">
+        <table class="table" *ngIf="user">
+          <tbody>
+          <tr>
+            <th scope="row">NOM COMPLET:</th>
+            <td>{{user.nom}}</td>
+            <td>{{user.prenom}}</td>
+          </tr>
+          <tr>
+            <th scope="row">EMAIL:</th>
+            <td colspan="2">{{user.email}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Role:</th>
+            <td colspan="2">{{user.role}}</td>
+          </tr>
+          <tr>
+            <th scope="row">ADDRESS:</th>
+            <td colspan="2">COLLO SKIKDA</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
